@@ -10,6 +10,7 @@ Activity Log: Track all actions performed on tickets, including status changes, 
 User Authentication: Secure login and registration system for both customers and support agents.
 Role-based Access Control: Define user roles (e.g., admin, agent, customer) with different permissions.
 Error Log: Capture and store error details for debugging and troubleshooting purposes.
+
 **Technology Stack**
 ASP.NET Core MVC: Web framework for building the application's structure and handling HTTP requests.
 C#: Primary programming language for backend development.
