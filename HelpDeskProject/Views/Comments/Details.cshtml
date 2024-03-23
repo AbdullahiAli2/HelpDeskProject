@@ -1,0 +1,51 @@
+﻿@model HelpDeskProject.Models.Comment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Ticket Comments Details</h3>
+
+<div>
+    <hr />
+    <div class="col-md-12">
+        <div class="row">
+            <table class="table table-bordered table-hover table-responsive">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CommentID)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CommentID)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TicketID)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Ticket.Description)
+                    </td>
+                    </tr>
+                    <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CommentText)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CommentText)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedAt)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedAt)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="mt-4">
+    <div class="form-group">
+        <a asp-action="Index" class="btn btn-danger float-start"><i class="fa fa-backward"></i> Back to List</a>
+        <a asp-action="Edit" asp-route-id="@Model?.CommentID" class="btn btn-primary float-end"> <i class="fa fa-edit"></i> Update Comment</a>
+    </div>
+</div>

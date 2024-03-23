@@ -1,0 +1,65 @@
+﻿@model HelpDeskProject.Models.ActivityLog
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Activity Log Details</h1>
+
+
+<div>
+    <hr />
+    <div class="col-md-12">
+        <div class="row">
+            <table class="table table-bordered table-hover table-responsive">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LogID)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.LogID)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Action)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Action)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IPAddress)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.IPAddress)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Timestamp)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Timestamp)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BrowserInfo)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.BrowserInfo)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserID)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.User.FulllName)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="mt-4">
+    <div class="form-group">
+        <a asp-action="Index" class="btn btn-danger float-start"><i class="fa fa-backward"></i> Back to List</a>
+    </div>
+</div>

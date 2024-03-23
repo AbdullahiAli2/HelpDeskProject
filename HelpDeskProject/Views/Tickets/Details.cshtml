@@ -1,0 +1,65 @@
+﻿@model HelpDeskProject.Models.Ticket
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Ticket Details</h3>
+
+<div>
+    <hr />
+    <div class="col-md-12">
+        <div class="row">
+            <table class="table table-bordered table-hover table-responsive">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Title)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                    </tr>
+                    <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Status)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedBy.FulllName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedOn)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Priority)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Priority)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="mt-4">
+    <div class="form-group">
+        <a asp-action="Index" class="btn btn-danger float-start"><i class="fa fa-backward"></i> Back to List</a>
+        <a asp-action ="Edit" asp-route-id="@Model?.TicketID" class="btn btn-primary float-end"> <i class="fa fa-edit"></i> Update Ticket</a>
+    </div>
+</div>

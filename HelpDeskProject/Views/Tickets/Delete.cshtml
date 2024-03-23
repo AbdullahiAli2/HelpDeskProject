@@ -1,0 +1,70 @@
+﻿@model HelpDeskProject.Models.Ticket
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Ticket Details</h3>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div>
+    <hr />
+    <div class="col-md-12">
+        <div class="row">
+            <table class="table table-bordered table-hover table-responsive">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Title)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Status)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedBy.FulllName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedOn)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Priority)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Priority)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="TicketID" />
+    <div class="mt-4">
+        <div class="form-group">
+            <a asp-action="Index" class="btn btn-danger float-start"><i class="fa fa-backward"></i> Back to List</a>
+            <button type="submit" value="Create" class="btn btn-danger float-end"> <i class="fa fa-trash"></i> Delete Ticket</button>
+        </div>
+    </div>
+</form>

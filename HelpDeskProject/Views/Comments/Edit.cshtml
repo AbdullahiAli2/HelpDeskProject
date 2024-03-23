@@ -1,0 +1,46 @@
+﻿@model HelpDeskProject.Models.Comment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3>Add New Ticket Comment</h3>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="CommentID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TicketID" class="control-label"></label>
+                            <select asp-for="TicketID" class="form-control select2" asp-items="ViewBag.TicketID"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="CommentText" class="control-label"></label>
+                            <input asp-for="CommentText" class="form-control" />
+                            <span asp-validation-for="CommentText" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="form-group">
+                        <a asp-action="Index" class="btn btn-danger float-start"><i class="fa fa-backward"></i> Back to List</a>
+                        <button type="submit" value="Create" class="btn btn-primary float-end"> <i class="fa fa-save"></i> Update Comment</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
